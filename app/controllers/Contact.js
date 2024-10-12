@@ -41,8 +41,9 @@ module.exports.addContact = async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
-      image,
+      image: image,
     });
+    await contact.save();
     setSessionMessage(req, "success", "Contact added successfully");
     res.redirect("/");
   } catch (error) {
