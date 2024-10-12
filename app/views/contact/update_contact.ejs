@@ -1,0 +1,58 @@
+<%- include('../layouts/header.ejs') %>
+
+    <div class="container p-2 my-2 border">
+        <a href="/" class="btn btn-outline-dark"> <i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+
+    <div class="container p-2 border bg-light-subtle rounded-2">
+        <div class="w-75 mx-auto p-5">
+            <h2>Update Informations :</h2>
+            <form action="/edit/<%= contact.id %>" method="post" enctype="multipart/form-data">
+                <div class="form-row mt-3">
+                    <label class="form-label" for="name">Name :</label>
+                    <input type="text" name="name" value="<%= contact.name %>" class="form-control" 
+                    placeholder="name" required>
+                </div>
+                <div class="form-row mt-3">
+                    <label class="form-label" for="email">Email :</label>
+                    <input type="email" name="email" value="<%= contact.email %>" class="form-control"
+                        placeholder="Email" required>
+                </div>
+                <div class="form-row mt-3">
+                    <label class="form-label" for="phone">Phone :</label>
+                    <input type="tel" name="phone" value="<%= contact.phone %>" class="form-control"
+                        placeholder="Phone number" required>
+                </div>
+                <div class="form-row mt-3">
+                    <button type="submit" class="w-100 btn btn-lg btn-dark">Update Informations</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container my-2 p-2 border bg-light-subtle rounded-2">
+        <div class="w-75 mx-auto p-5">
+            <h2 class="pb-5">Update Avatar :</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <% if (contact.image) { %>
+                        <img class="img-thumbnail img-fluid" src="/public/uploads/<%= contact.image %>" alt="Image de <%= contact.name %>" />
+                    <% } else { %>
+                       <img class="img-thumbnail img-fluid" src="/public/uploads/default.jpg" alt="Image de <%= contact.name %>" />
+                    <% } %>
+                </div>
+                <div class="col-md-9">
+                    <form action="/edit-avatar/<%= contact.id %>" method="post" enctype="multipart/form-data">
+                        <div class="form-row mt-3">
+                            <label class="form-label" for="image">Uploader votre image</label>
+                            <input type="file" name="image" class="form-control" id="customFile" required />
+                        </div>
+                        <div class="form-row mt-3">
+                            <button type="submit" class="w-100 btn btn-lg btn-dark">Update Avatar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../layouts/footer.ejs') %>

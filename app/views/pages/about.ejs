@@ -1,0 +1,68 @@
+<%- include('../layouts/header.ejs') %>
+
+    <div class="container border my-5 p-5">
+
+
+
+        <h1 class="h1 py-3">Presentation of Contact Manager Web Application (CRUD)</h1>
+        <h2 class="h3">1. Overview of the Contact Manager</h2>
+
+        <p>
+            The Contact Manager is a simple, yet powerful web application designed for managing contacts. It provides a
+            user-friendly interface to perform all basic CRUD (Create, Read, Update, Delete) operations. The app is
+            built
+            using:
+        </p>
+        <ul>
+            <li>Node.js and Express.js for the backend.</li>
+            <li>MongoDB for the database.</li>
+            <li>EJS (Embedded JavaScript) for rendering views on the server side.</li>
+            <li>DataTables for enhanced data management on the frontend (sorting, searching, pagination).</li>
+        </ul>
+        <h3>2. Core Features</h3>.
+
+
+        <h4>Contact Creation:</h4>
+        <ul>
+            <li>Users can add new contacts with details like Name, Email, and Phone Number.</li>
+            <li>Validation is in place to ensure data integrity.</li>
+        </ul>
+        <h4>View Contact List:</h4>
+        <ul>
+            <li>All contacts are displayed in a table with the help of DataTables.</li>
+            <li>Users can search, filter, and paginate through their contacts.</li>
+            <li>Each row displays basic information with options to Edit or Delete.</li>
+        </ul>
+
+        <h4>Update Contact:</h4>
+        <ul>
+            <li>Users can click "Edit" on any contact to modify the existing details.</li>
+            <li>Data gets pre-filled in a form for easy updates.</li>
+        </ul>
+        
+        <h4>Delete Contact:</h4>
+        <ul>
+            <li>A contact can be removed from the list.</li>
+            <li>Confirmation prompts ensure that deletions are intentional.</li>
+        </ul>
+
+        <h4>Contact Search & Filtering:</h4>
+
+        <ul>
+            <li>Using DataTables, users can search by name, email, or phone.</li>
+            <li>Instant sorting and filtering without page reload.</li>
+        </ul>
+
+        <h4>Responsive Design:</h4>
+        <ul>
+            <li>The UI is mobile-friendly, ensuring that contacts can be managed easily from any device.</li>
+        </ul>      
+        <h3>3. Future Enhancementsr</h3>
+        <ul>
+            <li>Authentication & Authorization: Add login functionality to make the app multi-user.</li>
+            <li>Bulk Actions: Implement bulk delete or edit functionality for large contact lists.</li>
+            <li>Export Contacts: Add features to export contact lists to CSV or Excel files.</li>
+            <li>Advanced Filtering: Provide more granular filters for contact attributes.</li>
+        </ul>
+    </div>
+    <%- include('../layouts/footer.ejs') %>

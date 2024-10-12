@@ -1,0 +1,53 @@
+<%- include('../layouts/header.ejs') %>
+
+    <div class="container p-2 my-2 border">
+        <a href="/" class="btn btn-outline-dark"> <i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+
+    <div class="container p-5 border">
+        <div class="row">
+            <div class="col-md-3">
+                <% if (contact.image) { %>
+                    <img class="img-thumbnail" src="/public/uploads/<%= contact.image %>" height="150px" alt="Image de <%= contact.name %>" />
+                <% } else { %>
+                    <img class="img-thumbnail" src="/public/uploads/default.jpg" height="150px" alt="Image de <%= contact.name %>" />
+                <% } %>
+            </div>
+            <div class="col-lg-9">
+                <table class="table table-responsive table-borderless">
+                    <tr>
+                        <td>
+                            <strong>Name : </strong>
+                        </td>
+                        <td>
+                            <%= contact.name %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email : </strong></td>
+                        <td>
+                            <%= contact.email %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone :</strong></td>
+                        <td>
+                            <%= contact.phone %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actions : </strong></td>
+                        <td>
+                            <a href="/edit/<%= contact.id %>" class="btn btn-primary">
+                                <i class="fa-regular fa-edit"></i>
+                            </a>
+                            <a href="/delete/<%= contact.id %>" class="btn btn-danger">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </a>
+                        </td>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../layouts/footer.ejs') %>
