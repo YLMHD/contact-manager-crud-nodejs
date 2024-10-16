@@ -35,13 +35,12 @@ module.exports.getContact = async (req, res) => {
  * Module who add a contact
  */
 module.exports.addContact = async (req, res) => {
-  let image = req.file !== undefined ? req.file.filename : null;
   try {
     const contact = new Contact({
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
-      image: image,
+      image: req.file ? req.file.filename : null,
     });
     await contact.save();
     setSessionMessage(req, "success", "Contact added successfully");
